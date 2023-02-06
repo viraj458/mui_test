@@ -1,34 +1,23 @@
-import { Button, Typography } from '@mui/material';
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import React from 'react';
-import { margin } from '@mui/system';
-import styled from '@emotion/styled';
+import { Button, styled, Typography } from '@mui/material';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+
 
 function App() {
 
-  const BlueButton = styled(Button)({
-    backgroundColor: "skyblue",
-    color: "black",
-    margin: 5,
-    "&:hover":{
-      backgroundColor: "lightblue"
-    },
-    "&:disabled":{
-      backgroundColor:"grey",
-      color:"white"
-    }
-  })
+  const BlueButton = styled(Button)(({theme})=>({
+    backgroundColor: theme.palette.primary.light
+  }))
 
   return (
     <div>
-      <Button variant="text">Text</Button>
+      <Button variant="text" >Text</Button>
       <Button variant="contained" color='secondary' startIcon={<AccessibilityNewIcon/>}>Contained</Button>
       <Button variant="outlined" disableElevation>Outlined</Button>
       <Typography variant="h1">
-      h1. Heading
+       h1. Heading
       </Typography>
-      <BlueButton>the</BlueButton>
-      <BlueButton disabled>the</BlueButton>
+      <BlueButton>Hello</BlueButton>
 
     </div>
   );
